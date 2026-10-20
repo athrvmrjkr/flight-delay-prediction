@@ -442,3 +442,8 @@ __marimo__/
 
 # Streamlit
 .streamlit/secrets.toml
+
+
+# data and artifacts
+artifacts/
+data/

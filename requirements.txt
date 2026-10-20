@@ -1,0 +1,45 @@
+# --- data processing ---
+polars
+duckdb
+pyarrow
+pandas
+numpy
+requests
+httpx
+timezonefinder
+pyyaml
+python-dotenv
+huggingface_hub
+
+# --- validation ---
+pandera
+
+# --- modelling ---
+scikit-learn
+lightgbm
+xgboost
+shap
+joblib
+mlflow
+
+# --- visualisation / EDA ---
+matplotlib
+seaborn
+
+# --- serving ---
+fastapi
+uvicorn[standard]
+pydantic
+
+# --- front end (pick one later) ---
+streamlit
+
+# --- testing / code quality ---
+pytest
+ruff
+
+# --- add later, when you reach those stages ---
+# dvc
+# evidently
+
+-e .

@@ -1,0 +1,33 @@
+data:
+  start: "2024-01"
+  end: "2024-03"
+  raw_dir: data/raw
+  interim_dir: data/interim
+  processed_dir: data/processed
+  reference_dir: data/reference
+  artifacts_dir: artifacts
+
+bts:
+  url_template: "https://transtats.bts.gov/PREZIP/On_Time_Reporting_Carrier_On_Time_Performance_1987_present_{year}_{month}.zip"
+  max_workers: 3
+  timeout_seconds: 180
+  retries: 5
+  verify_ssl: true        # set to false only if you get SSL certificate errors from transtats.bts.gov
+
+airports:
+  url: "https://davidmegginson.github.io/ourairports-data/airports.csv"
+  overrides:
+    - {iata_code: PBI, name: "Palm Beach International Airport", municipality: "West Palm Beach", iso_country: US, latitude_deg: 26.6832, longitude_deg: -80.0956}
+
+validation:
+  min_rows_per_month: 300000
+  max_null_rate:
+    FlightDate: 0.0
+    Reporting_Airline: 0.0
+    Origin: 0.0
+    Dest: 0.0
+    CRSDepTime: 0.001
+  max_duplicate_rate: 0.001
+  max_unknown_airport_rate: 0.01
+  max_bad_value_rate: 0.001
+  max_inconsistent_target_rate: 0.0001
